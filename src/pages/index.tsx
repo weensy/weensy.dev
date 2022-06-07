@@ -58,11 +58,28 @@ const linkTitleStyles = {
   marginLeft: -30,
   textAlign: "center" as "center"
 }
+const sliderStyles = {
+  display: "flex",
+  overflowX: "scroll" as "scroll",
+  maxWidth: 360,
+  padding: 8
+}
 const caseStyles = {
   boxSizing: "border-box" as "border-box",
   minWidth: 220,
   height: 260,
   padding: 8
+}
+const cardStyles = {
+  display: "flex",
+  flexDirection: "column" as "column",
+  justifyContent: "space-between",
+  boxSizing: "border-box" as "border-box",
+  padding: 16,
+  borderRadius: 20,
+  boxShadow: "0px 0px 20px 0px rgba(28, 28, 30, 0.1)",
+  width: "100%",
+  height: "100%"
 }
 const cardImageStyles = {
   borderRadius: "16px",
@@ -85,6 +102,10 @@ const cardButtonStyles = {
   paddingTop: 6,
   paddingBottom: 6,
   background: "rgb(242, 242, 247)"
+}
+const cardButtonTextStyles = {
+  fontWeight:500,
+  fontSize:14
 }
 
 // data
@@ -110,41 +131,24 @@ const works = [
 const IndexPage = ({}) => {
   return (
     <main style={pageStyles}>
-      <Helmet>
+      <Helmet title="Weensy">
         <link rel="preconnect" href="https://stijndv.com"/>
         <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css"/>
         <style>
           {`
-            .slider {
-              display: flex;
-              overflow-x: scroll;
-              max-width: 360px;
-              padding: 8px;
+            a {
+              color: inherit;
+              text-decoration: none;
             }
-            .slider::-webkit-scrollbar {
+            div::-webkit-scrollbar {
               height: 8px;
             }
-            .slider::-webkit-scrollbar-thumb {
-              // background-color: #c7c7cc;
+            div::-webkit-scrollbar-thumb {
               background-color: #d1d1d6;
               border-radius: 50px;
             }
-            .slider-card-case {
-              box-sizing: border-box;
-              min-width: 220px;
-              height: 260px;
-              padding: 16px
-            }
-            .slider-card {
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-              box-sizing: border-box;
-              padding: 16px;
-              border-radius: 20px;
-              box-shadow: 0px 0px 20px 0px rgba(28, 28, 30, 0.1);
-              width: 100%;
-              height: 100%;
+            ::selection {
+              background-color: #bbaaee;
             }
           `}
         </style>
@@ -169,110 +173,180 @@ const IndexPage = ({}) => {
 
       <h2 style={headingStyles}>Links</h2>
       <div style={linkListStyles}>
-        <div style={linkLabelStyles}>
-          <StaticImage
-            src="../images/links/instagram.webp"
-            alt="Instagram"
-            placeholder="blurred"
-            layout="fixed"
-            width={30}
-            quality={100}
-            style={linkImageStyle}
-          />
-          <div style={linkTitleStyles}>Instagram</div>
-        </div>
-        <div style={linkLabelStyles}>
-          <StaticImage
-            src="../images/links/github.webp"
-            alt="GitHub"
-            placeholder="blurred"
-            layout="fixed"
-            width={30}
-            quality={100}
-            style={linkImageStyle}
-          />
-          <div style={linkTitleStyles}>GitHub</div>
-        </div>
-        <div style={linkLabelStyles}>
-          <StaticImage
-            src="../images/links/medium.webp"
-            alt="Medium"
-            placeholder="blurred"
-            layout="fixed"
-            width={30}
-            quality={100}
-            style={linkImageStyle}
-          />
-          <div style={linkTitleStyles}>Medium</div>
-        </div>
-        <div style={linkLabelStyles}>
-          <StaticImage
-            src="../images/links/hashnode.webp"
-            alt="Hashnode"
-            placeholder="blurred"
-            layout="fixed"
-            width={30}
-            quality={100}
-            style={linkImageStyle}
-          />
-          <div style={linkTitleStyles}>Hashnode</div>
-        </div>
-        <div style={linkLabelStyles}>
-          <StaticImage
-            src="../images/links/mail.webp"
-            alt="Mail me"
-            placeholder="blurred"
-            layout="fixed"
-            width={30}
-            quality={100}
-            style={linkImageStyle}
-          />
-          <div style={linkTitleStyles}>Mail me</div>
-        </div>
-        <div style={linkLabelStyles}>
-          <StaticImage
-            src="../images/links/discord.webp"
-            alt="Discord"
-            placeholder="blurred"
-            layout="fixed"
-            width={30}
-            quality={100}
-            style={linkImageStyle}
-          />
-          <div style={linkTitleStyles}>Discord</div>
-        </div>
-        <div style={linkLabelStyles}>
-          <StaticImage
-            src="../images/links/buymeacoffee.webp"
-            alt="Buy Me a Coffee"
-            placeholder="blurred"
-            layout="fixed"
-            width={30}
-            quality={100}
-            style={linkImageStyle}
-          />
-          <div style={linkTitleStyles}>Buy Me a Coffee</div>
-        </div>
+        <a href="https://instagram.com/weensy.dev" target="_blank" rel="noopener noreferrer">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/instagram.webp"
+              alt="Instagram"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+            />
+            <div style={linkTitleStyles}>Instagram</div>
+          </div>
+        </a>
+        <a href="https://github.com/weensy" target="_blank" rel="noopener noreferrer">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/github.webp"
+              alt="GitHub"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+            />
+            <div style={linkTitleStyles}>GitHub</div>
+          </div>
+        </a>
+        <a href="https://weensy.medium.com" target="_blank" rel="noopener noreferrer">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/medium.webp"
+              alt="Medium"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+            />
+            <div style={linkTitleStyles}>Medium</div>
+          </div>
+        </a>
+        <a href="https://weensy.hashnode.dev" target="_blank" rel="noopener noreferrer">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/hashnode.webp"
+              alt="Hashnode"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+            />
+            <div style={linkTitleStyles}>Hashnode</div>
+          </div>
+        </a>
+        <a href="mailto:hello@weensy.dev">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/mail.webp"
+              alt="Mail me"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+            />
+            <div style={linkTitleStyles}>Mail me</div>
+          </div>
+        </a>
+        <a href="https://discordapp.com/users/360789601532772354" target="_blank" rel="noopener noreferrer">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/discord.webp"
+              alt="Discord"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+            />
+            <div style={linkTitleStyles}>Discord</div>
+          </div>
+        </a>
+        <a href="https://buymeacoffee.com/weensy" target="_blank" rel="noopener noreferrer">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/buymeacoffee.webp"
+              alt="Buy Me a Coffee"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+            />
+            <div style={linkTitleStyles}>Buy Me a Coffee</div>
+          </div>
+        </a>
       </div>
 
       <h2 style={headingStyles}>Works</h2>
-      <div className="slider">
-        {works.map(work => (
-          <div style={caseStyles}>
-            <div className="slider-card">
+      <div style={sliderStyles}>
+        <div style={caseStyles}>
+          <a href="https://gatsby-vapor.weensy.dev" target="_blank" rel="noopener noreferrer">
+            <div style={cardStyles}>
               <div>
-                <div style={cardImageStyles}></div>
-                <h3 style={cardTitleStyles}>{work.title}</h3>
-                <p style={cardDescStyles}>{work.desc}</p>
+                <StaticImage
+                  src="../images/works/vapor.png"
+                  alt="Vapor"
+                  placeholder="blurred"
+                  layout="fixed"
+                  width={172}
+                  quality={100}
+                  style={cardImageStyles}
+                />
+                <h3 style={cardTitleStyles}>Vapor</h3>
+                <p style={cardDescStyles}>Gatsby Starter</p>
               </div>
               <div>
                 <div style={cardButtonStyles}>
-                  <div style={{fontWeight:500,fontSize:14}}>{work.button}</div>
+                  <div style={cardButtonTextStyles}>Demo site</div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          </a>
+        </div>
+        <div style={caseStyles}>
+          <a href="https://gatsby-lam.weensy.dev" target="_blank" rel="noopener noreferrer">
+            <div style={cardStyles}>
+              <div>
+                <StaticImage
+                  src="../images/works/lam.png"
+                  alt="LAM"
+                  placeholder="blurred"
+                  layout="fixed"
+                  width={172}
+                  quality={100}
+                  style={cardImageStyles}
+                />
+                <h3 style={cardTitleStyles}>LAM</h3>
+                <p style={cardDescStyles}>Gatsby Starter</p>
+              </div>
+              <div>
+                <div style={cardButtonStyles}>
+                  <div style={cardButtonTextStyles}>Demo site</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div style={caseStyles}>
+          <a href="https://maccy.app" target="_blank" rel="noopener noreferrer">
+            <div style={cardStyles}>
+              <div>
+                <StaticImage
+                  src="../images/works/maccy.png"
+                  alt="Maccy"
+                  placeholder="blurred"
+                  layout="fixed"
+                  width={172}
+                  quality={100}
+                  style={cardImageStyles}
+                />
+                <h3 style={cardTitleStyles}>Maccy</h3>
+                <p style={cardDescStyles}>Translate to 🇯🇵 & 🇰🇷</p>
+              </div>
+              <div>
+                <div style={cardButtonStyles}>
+                  <div style={cardButtonTextStyles}>Website</div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </main>
   )
