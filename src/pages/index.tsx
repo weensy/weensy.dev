@@ -1,193 +1,279 @@
 import * as React from "react"
+import { Helmet } from "react-helmet"
+import { StaticImage } from "gatsby-plugin-image"
 
 // styles
 const pageStyles = {
   color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+  padding: 48,
+  fontFamily: "Eudoxus Sans, -apple-system, Roboto, sans-serif",
+  fontWeight: 400,
+  display: "flex",
+  flexDirection: "column" as "column",
+  alignItems: "center",
+}
+const profileStyles = {
+  display: "flex",
+  flexDirection: "column" as "column",
+  alignItems: "center"
+}
+const photoStyle = {
+  borderRadius: "50%"
+}
+const titleStyles = {
+  fontWeight: 600,
+  marginTop: 8,
+  marginBottom: 0
+}
+const descriptionStyles = {
+  marginTop: 8,
+  marginBottom: 0
 }
 const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
+  fontWeight: 600,
+  marginTop: 64,
+  marginBottom: 0
 }
-const headingAccentStyles = {
-  color: "#663399",
+const linkListStyles = {
+  display: "flex",
+  flexDirection: "column" as "column",
+  gap: 12,
+  marginTop: 16,
 }
-const paragraphStyles = {
-  marginBottom: 48,
+const linkLabelStyles = {
+  display: "flex",
+  alignItems: "center",
+  background: "rgb(242, 242, 247)",
+  padding: "8px 12px",
+  borderRadius: 16,
+  width: 280,
+  boxSizing: "border-box" as "border-box",
 }
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
+const linkImageStyle = {
+  borderRadius: "50%"
 }
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
+const linkTitleStyles = {
+  fontWeight: 500,
+  minWidth: 280 - 24,
+  marginLeft: -30,
+  textAlign: "center" as "center"
 }
-const doclistStyles = {
-  paddingLeft: 0,
+const caseStyles = {
+  boxSizing: "border-box" as "border-box",
+  minWidth: 220,
+  height: 260,
+  padding: 8
 }
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
+const cardImageStyles = {
+  borderRadius: "16px",
+  width: "auto",
+  height: 80,
+  background: "rgb(242, 242, 247)"
 }
-
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
+const cardTitleStyles = {
+  marginTop: 8,
+  marginBottom: 0
 }
-
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
+const cardDescStyles = {
+  marginTop: 6,
+  marginBottom: 0
 }
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLinks = [
-  {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
-  },
-  {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  }
-]
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
+const cardButtonStyles = {
+  display: "flex",
+  justifyContent: "center",
+  borderRadius: 32,
+  paddingTop: 6,
+  paddingBottom: 6,
+  background: "rgb(242, 242, 247)"
 }
 
 // data
-const links = [
+const works = [
   {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
+    title: "Vapor",
+    desc: "Gatsby Starter",
+    button: "Demo site"
   },
   {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
+    title: "LAM",
+    desc: "Gatsby Starter",
+    button: "Demo site"
   },
   {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
+    title: "Maccy",
+    desc: "Translate to 🇯🇵 & 🇰🇷",
+    button: "Website"
+  }
 ]
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({}) => {
   return (
     <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        🎉🎉🎉
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={doclistStyles}>
-        {docLinks.map(doc => (
-          <li style={docLinkStyle}>
-            <a
-              style={linkStyle}
-              href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
-            >
-              {doc.text}
-            </a>
-          </li>
+      <Helmet>
+        <link rel="preconnect" href="https://stijndv.com"/>
+        <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css"/>
+        <style>
+          {`
+            .slider {
+              display: flex;
+              overflow-x: scroll;
+              max-width: 360px;
+              padding: 8px;
+            }
+            .slider::-webkit-scrollbar {
+              height: 8px;
+            }
+            .slider::-webkit-scrollbar-thumb {
+              // background-color: #c7c7cc;
+              background-color: #d1d1d6;
+              border-radius: 50px;
+            }
+            .slider-card-case {
+              box-sizing: border-box;
+              min-width: 220px;
+              height: 260px;
+              padding: 16px
+            }
+            .slider-card {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              box-sizing: border-box;
+              padding: 16px;
+              border-radius: 20px;
+              box-shadow: 0px 0px 20px 0px rgba(28, 28, 30, 0.1);
+              width: 100%;
+              height: 100%;
+            }
+          `}
+        </style>
+      </Helmet>
+      <div style={profileStyles}>
+        <StaticImage
+          src="../images/profile.png"
+          alt="Photo"
+          placeholder="blurred"
+          layout="fixed"
+          width={120}
+          quality={100}
+          style={photoStyle}
+        />
+        <h1 style={titleStyles}>
+          Weensy
+        </h1>
+        <p style={descriptionStyles}>
+          Software developer 📍JP<br/>
+        </p>
+      </div>
+
+      <h2 style={headingStyles}>Links</h2>
+      <div style={linkListStyles}>
+        <div style={linkLabelStyles}>
+          <StaticImage
+            src="../images/links/instagram.webp"
+            alt="Instagram"
+            placeholder="blurred"
+            layout="fixed"
+            width={30}
+            quality={100}
+            style={linkImageStyle}
+          />
+          <div style={linkTitleStyles}>Instagram</div>
+        </div>
+        <div style={linkLabelStyles}>
+          <StaticImage
+            src="../images/links/github.webp"
+            alt="GitHub"
+            placeholder="blurred"
+            layout="fixed"
+            width={30}
+            quality={100}
+            style={linkImageStyle}
+          />
+          <div style={linkTitleStyles}>GitHub</div>
+        </div>
+        <div style={linkLabelStyles}>
+          <StaticImage
+            src="../images/links/medium.webp"
+            alt="Medium"
+            placeholder="blurred"
+            layout="fixed"
+            width={30}
+            quality={100}
+            style={linkImageStyle}
+          />
+          <div style={linkTitleStyles}>Medium</div>
+        </div>
+        <div style={linkLabelStyles}>
+          <StaticImage
+            src="../images/links/hashnode.webp"
+            alt="Hashnode"
+            placeholder="blurred"
+            layout="fixed"
+            width={30}
+            quality={100}
+            style={linkImageStyle}
+          />
+          <div style={linkTitleStyles}>Hashnode</div>
+        </div>
+        <div style={linkLabelStyles}>
+          <StaticImage
+            src="../images/links/mail.webp"
+            alt="Mail me"
+            placeholder="blurred"
+            layout="fixed"
+            width={30}
+            quality={100}
+            style={linkImageStyle}
+          />
+          <div style={linkTitleStyles}>Mail me</div>
+        </div>
+        <div style={linkLabelStyles}>
+          <StaticImage
+            src="../images/links/discord.webp"
+            alt="Discord"
+            placeholder="blurred"
+            layout="fixed"
+            width={30}
+            quality={100}
+            style={linkImageStyle}
+          />
+          <div style={linkTitleStyles}>Discord</div>
+        </div>
+        <div style={linkLabelStyles}>
+          <StaticImage
+            src="../images/links/buymeacoffee.webp"
+            alt="Buy Me a Coffee"
+            placeholder="blurred"
+            layout="fixed"
+            width={30}
+            quality={100}
+            style={linkImageStyle}
+          />
+          <div style={linkTitleStyles}>Buy Me a Coffee</div>
+        </div>
+      </div>
+
+      <h2 style={headingStyles}>Works</h2>
+      <div className="slider">
+        {works.map(work => (
+          <div style={caseStyles}>
+            <div className="slider-card">
+              <div>
+                <div style={cardImageStyles}></div>
+                <h3 style={cardTitleStyles}>{work.title}</h3>
+                <p style={cardDescStyles}>{work.desc}</p>
+              </div>
+              <div>
+                <div style={cardButtonStyles}>
+                  <div style={{fontWeight:500,fontSize:14}}>{work.button}</div>
+                </div>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
+      </div>
     </main>
   )
 }
