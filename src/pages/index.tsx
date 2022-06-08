@@ -59,12 +59,13 @@ const linkTitleStyles = {
   textAlign: "center" as "center"
 }
 const sliderContainerStyles = {
-  overflowX: "scroll" as "scroll"
+  overflowX: "scroll" as "scroll",
+  maxWidth: 360
 }
 const sliderMainStyles = {
   display: "flex",
-  maxWidth: 360,
-  padding: 8
+  padding: 8,
+  width: 220 * 3
 }
 const caseStyles = {
   boxSizing: "border-box" as "border-box",
