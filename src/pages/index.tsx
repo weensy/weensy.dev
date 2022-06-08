@@ -128,12 +128,26 @@ const works = [
     button: "Website"
   }
 ]
+const seo = {
+  title: "Weensy",
+  description: "Software developer 📍JP",
+  url: "https://weensy.dev"
+}
 
 // markup
 const IndexPage = ({}) => {
   return (
     <main style={pageStyles}>
-      <Helmet title="Weensy">
+      <Helmet title={seo.title} htmlAttributes={{lang:"en"}}>
+        <meta name="description" content={seo.description}/>
+        <meta property="og:url" content={seo.url}/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content={seo.title}/>
+        <meta property="og:description" content={seo.description}/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:creator" content={seo.title}/>
+        <meta name="twitter:title" content={seo.title}/>
+        <meta name="twitter:description" content={seo.description}/>
         <link rel="preconnect" href="https://stijndv.com"/>
         <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css"/>
         <style>
