@@ -58,9 +58,11 @@ const linkTitleStyles = {
   marginLeft: -30,
   textAlign: "center" as "center"
 }
-const sliderStyles = {
+const sliderContainerStyles = {
+  overflowX: "scroll" as "scroll"
+}
+const sliderMainStyles = {
   display: "flex",
-  overflowX: "scroll" as "scroll",
   maxWidth: 360,
   padding: 8
 }
@@ -150,6 +152,20 @@ const IndexPage = ({}) => {
             ::selection {
               background-color: #bbaaee;
             }
+            .image-radius-50 img {
+              border-radius: 50%;
+              -o-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -kthml-border-radius: 50%;
+              -webkit-border-radius: 50%;
+            }
+            .image-radius-16px img {
+              border-radius: 16px;
+              -o-border-radius: 16px;
+              -moz-border-radius: 16px;
+              -kthml-border-radius: 16px;
+              -webkit-border-radius: 16px;
+            }
           `}
         </style>
       </Helmet>
@@ -162,6 +178,7 @@ const IndexPage = ({}) => {
           width={120}
           quality={100}
           style={photoStyle}
+          className="image-radius-50"
         />
         <h1 style={titleStyles}>
           Weensy
@@ -183,6 +200,7 @@ const IndexPage = ({}) => {
               width={30}
               quality={100}
               style={linkImageStyle}
+              className="image-radius-50"
             />
             <div style={linkTitleStyles}>Instagram</div>
           </div>
@@ -197,6 +215,7 @@ const IndexPage = ({}) => {
               width={30}
               quality={100}
               style={linkImageStyle}
+              className="image-radius-50"
             />
             <div style={linkTitleStyles}>GitHub</div>
           </div>
@@ -211,6 +230,7 @@ const IndexPage = ({}) => {
               width={30}
               quality={100}
               style={linkImageStyle}
+              className="image-radius-50"
             />
             <div style={linkTitleStyles}>Medium</div>
           </div>
@@ -225,6 +245,7 @@ const IndexPage = ({}) => {
               width={30}
               quality={100}
               style={linkImageStyle}
+              className="image-radius-50"
             />
             <div style={linkTitleStyles}>Hashnode</div>
           </div>
@@ -239,6 +260,7 @@ const IndexPage = ({}) => {
               width={30}
               quality={100}
               style={linkImageStyle}
+              className="image-radius-50"
             />
             <div style={linkTitleStyles}>Mail me</div>
           </div>
@@ -253,6 +275,7 @@ const IndexPage = ({}) => {
               width={30}
               quality={100}
               style={linkImageStyle}
+              className="image-radius-50"
             />
             <div style={linkTitleStyles}>Discord</div>
           </div>
@@ -267,6 +290,7 @@ const IndexPage = ({}) => {
               width={30}
               quality={100}
               style={linkImageStyle}
+              className="image-radius-50"
             />
             <div style={linkTitleStyles}>Buy Me a Coffee</div>
           </div>
@@ -274,7 +298,8 @@ const IndexPage = ({}) => {
       </div>
 
       <h2 style={headingStyles}>Works</h2>
-      <div style={sliderStyles}>
+      <div style={sliderContainerStyles}>
+        <div style={sliderMainStyles}>
         <div style={caseStyles}>
           <a href="https://gatsby-vapor.weensy.dev" target="_blank" rel="noopener noreferrer">
             <div style={cardStyles}>
@@ -287,6 +312,7 @@ const IndexPage = ({}) => {
                   width={172}
                   quality={100}
                   style={cardImageStyles}
+                  className="image-radius-16px"
                 />
                 <h3 style={cardTitleStyles}>Vapor</h3>
                 <p style={cardDescStyles}>Gatsby Starter</p>
@@ -311,6 +337,7 @@ const IndexPage = ({}) => {
                   width={172}
                   quality={100}
                   style={cardImageStyles}
+                  className="image-radius-16px"
                 />
                 <h3 style={cardTitleStyles}>LAM</h3>
                 <p style={cardDescStyles}>Gatsby Starter</p>
@@ -335,6 +362,7 @@ const IndexPage = ({}) => {
                   width={172}
                   quality={100}
                   style={cardImageStyles}
+                  className="image-radius-16px"
                 />
                 <h3 style={cardTitleStyles}>Maccy</h3>
                 <p style={cardDescStyles}>Translate to 🇯🇵 & 🇰🇷</p>
@@ -346,6 +374,7 @@ const IndexPage = ({}) => {
               </div>
             </div>
           </a>
+        </div>
         </div>
       </div>
     </main>
