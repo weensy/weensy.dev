@@ -295,6 +295,21 @@ const IndexPage = ({}) => {
             <div style={linkTitleStyles}>Discord</div>
           </div>
         </a>
+        <a href="https://monkeytype.com/profile/NrzN11QAJ5QzqMCy6XsdZsQQjrJ2" target="_blank" rel="noopener noreferrer">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/monkeytype.png"
+              alt="Monkeytype"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+              className="image-radius-50"
+            />
+            <div style={linkTitleStyles}>Monkeytype</div>
+          </div>
+        </a>
         <a href="https://buymeacoffee.com/weensy" target="_blank" rel="noopener noreferrer">
           <div style={linkLabelStyles}>
             <StaticImage
