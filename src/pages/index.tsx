@@ -265,36 +265,6 @@ const IndexPage = ({}) => {
             <div style={linkTitleStyles}>Hashnode</div>
           </div>
         </a>
-        <a href="mailto:hello@weensy.dev">
-          <div style={linkLabelStyles}>
-            <StaticImage
-              src="../images/links/mail.webp"
-              alt="Mail me"
-              placeholder="blurred"
-              layout="fixed"
-              width={30}
-              quality={100}
-              style={linkImageStyle}
-              className="image-radius-50"
-            />
-            <div style={linkTitleStyles}>Mail me</div>
-          </div>
-        </a>
-        <a href="https://discordapp.com/users/360789601532772354" target="_blank" rel="noopener noreferrer">
-          <div style={linkLabelStyles}>
-            <StaticImage
-              src="../images/links/discord.webp"
-              alt="Discord"
-              placeholder="blurred"
-              layout="fixed"
-              width={30}
-              quality={100}
-              style={linkImageStyle}
-              className="image-radius-50"
-            />
-            <div style={linkTitleStyles}>Discord</div>
-          </div>
-        </a>
         <a href="https://monkeytype.com/profile/NrzN11QAJ5QzqMCy6XsdZsQQjrJ2" target="_blank" rel="noopener noreferrer">
           <div style={linkLabelStyles}>
             <StaticImage
@@ -310,6 +280,36 @@ const IndexPage = ({}) => {
             <div style={linkTitleStyles}>Monkeytype</div>
           </div>
         </a>
+        <a href="mailto:hello@weensy.dev">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/mail.webp"
+              alt="Mail me"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+              className="image-radius-50"
+            />
+            <div style={linkTitleStyles}>Contact</div>
+          </div>
+        </a>
+        {/* <a href="https://discordapp.com/users/360789601532772354" target="_blank" rel="noopener noreferrer">
+          <div style={linkLabelStyles}>
+            <StaticImage
+              src="../images/links/discord.webp"
+              alt="Discord"
+              placeholder="blurred"
+              layout="fixed"
+              width={30}
+              quality={100}
+              style={linkImageStyle}
+              className="image-radius-50"
+            />
+            <div style={linkTitleStyles}>Discord</div>
+          </div>
+        </a> */}
         <a href="https://buymeacoffee.com/weensy" target="_blank" rel="noopener noreferrer">
           <div style={linkLabelStyles}>
             <StaticImage
@@ -345,7 +345,7 @@ const IndexPage = ({}) => {
                   className="image-radius-16px"
                 />
                 <h3 style={cardTitleStyles}>Vapor</h3>
-                <p style={cardDescStyles}>Gatsby Starter</p>
+                <p style={cardDescStyles}>Gatsby Blog Starter</p>
               </div>
               <div>
                 <div style={cardButtonStyles}>
@@ -370,7 +370,7 @@ const IndexPage = ({}) => {
                   className="image-radius-16px"
                 />
                 <h3 style={cardTitleStyles}>LAM</h3>
-                <p style={cardDescStyles}>Gatsby Starter</p>
+                <p style={cardDescStyles}>Gatsby Blog Starter</p>
               </div>
               <div>
                 <div style={cardButtonStyles}>
