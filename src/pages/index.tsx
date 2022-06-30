@@ -330,81 +330,106 @@ const IndexPage = ({}) => {
       <h2 style={headingStyles}>Works</h2>
       <div style={sliderContainerStyles}>
         <div style={sliderMainStyles}>
-        <div style={caseStyles}>
-          <a href="https://gatsby-vapor.weensy.dev" target="_blank" rel="noopener noreferrer">
-            <div style={cardStyles}>
-              <div>
-                <StaticImage
-                  src="../images/works/vapor.png"
-                  alt="Vapor"
-                  placeholder="blurred"
-                  layout="fixed"
-                  width={172}
-                  quality={100}
-                  style={cardImageStyles}
-                  className="image-radius-16px"
-                />
-                <h3 style={cardTitleStyles}>Vapor</h3>
-                <p style={cardDescStyles}>Gatsby Blog Starter</p>
-              </div>
-              <div>
-                <div style={cardButtonStyles}>
-                  <div style={cardButtonTextStyles}>Demo site</div>
+          <div style={caseStyles}>
+            <a href="https://gatsby-vapor.weensy.dev" target="_blank" rel="noopener noreferrer">
+              <div style={cardStyles}>
+                <div>
+                  <StaticImage
+                    src="../images/works/vapor.png"
+                    alt="Vapor"
+                    placeholder="blurred"
+                    layout="fixed"
+                    width={172}
+                    quality={100}
+                    style={cardImageStyles}
+                    className="image-radius-16px"
+                  />
+                  <h3 style={cardTitleStyles}>Vapor</h3>
+                  <p style={cardDescStyles}>Gatsby Blog Starter</p>
+                </div>
+                <div>
+                  <div style={cardButtonStyles}>
+                    <div style={cardButtonTextStyles}>Demo site</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </a>
-        </div>
-        <div style={caseStyles}>
-          <a href="https://gatsby-lam.weensy.dev" target="_blank" rel="noopener noreferrer">
-            <div style={cardStyles}>
-              <div>
-                <StaticImage
-                  src="../images/works/lam.png"
-                  alt="LAM"
-                  placeholder="blurred"
-                  layout="fixed"
-                  width={172}
-                  quality={100}
-                  style={cardImageStyles}
-                  className="image-radius-16px"
-                />
-                <h3 style={cardTitleStyles}>LAM</h3>
-                <p style={cardDescStyles}>Gatsby Blog Starter</p>
-              </div>
-              <div>
-                <div style={cardButtonStyles}>
-                  <div style={cardButtonTextStyles}>Demo site</div>
+            </a>
+          </div>
+          <div style={caseStyles}>
+            <a href="https://gatsby-lam.weensy.dev" target="_blank" rel="noopener noreferrer">
+              <div style={cardStyles}>
+                <div>
+                  <StaticImage
+                    src="../images/works/lam.png"
+                    alt="LAM"
+                    placeholder="blurred"
+                    layout="fixed"
+                    width={172}
+                    quality={100}
+                    style={cardImageStyles}
+                    className="image-radius-16px"
+                  />
+                  <h3 style={cardTitleStyles}>LAM</h3>
+                  <p style={cardDescStyles}>Gatsby Blog Starter</p>
+                </div>
+                <div>
+                  <div style={cardButtonStyles}>
+                    <div style={cardButtonTextStyles}>Demo site</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </a>
-        </div>
-        <div style={caseStyles}>
-          <a href="https://maccy.app" target="_blank" rel="noopener noreferrer">
-            <div style={cardStyles}>
-              <div>
-                <StaticImage
-                  src="../images/works/maccy.png"
-                  alt="Maccy"
-                  placeholder="blurred"
-                  layout="fixed"
-                  width={172}
-                  quality={100}
-                  style={cardImageStyles}
-                  className="image-radius-16px"
-                />
-                <h3 style={cardTitleStyles}>Maccy</h3>
-                <p style={cardDescStyles}>Translate to 🇯🇵 & 🇰🇷</p>
-              </div>
-              <div>
-                <div style={cardButtonStyles}>
-                  <div style={cardButtonTextStyles}>Website</div>
+            </a>
+          </div>
+          <div style={caseStyles}>
+            <a href="https://github.com/weensy/LXKB" target="_blank" rel="noopener noreferrer">
+              <div style={cardStyles}>
+                <div>
+                  <StaticImage
+                    src="../images/works/lxkb.png"
+                    alt="LXKB"
+                    placeholder="blurred"
+                    layout="fixed"
+                    width={172}
+                    quality={100}
+                    style={cardImageStyles}
+                    className="image-radius-16px"
+                  />
+                  <h3 style={cardTitleStyles}>LXKB</h3>
+                  <p style={cardDescStyles}>Minimal Keyboard</p>
+                </div>
+                <div>
+                  <div style={cardButtonStyles}>
+                    <div style={cardButtonTextStyles}>Repository</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </a>
-        </div>
+            </a>
+          </div>
+          <div style={caseStyles}>
+            <a href="https://maccy.app" target="_blank" rel="noopener noreferrer">
+              <div style={cardStyles}>
+                <div>
+                  <StaticImage
+                    src="../images/works/maccy.png"
+                    alt="Maccy"
+                    placeholder="blurred"
+                    layout="fixed"
+                    width={172}
+                    quality={100}
+                    style={cardImageStyles}
+                    className="image-radius-16px"
+                  />
+                  <h3 style={cardTitleStyles}>Maccy</h3>
+                  <p style={cardDescStyles}>Translate to 🇯🇵 & 🇰🇷</p>
+                </div>
+                <div>
+                  <div style={cardButtonStyles}>
+                    <div style={cardButtonTextStyles}>Website</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </main>
