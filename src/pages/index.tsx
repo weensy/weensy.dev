@@ -235,7 +235,7 @@ const IndexPage = ({}) => {
             <div style={linkTitleStyles}>GitHub</div>
           </div>
         </a>
-        <a href="https://weensy.medium.com" target="_blank" rel="noopener noreferrer">
+        {/* <a href="https://weensy.medium.com" target="_blank" rel="noopener noreferrer">
           <div style={linkLabelStyles}>
             <StaticImage
               src="../images/links/medium.webp"
@@ -249,7 +249,7 @@ const IndexPage = ({}) => {
             />
             <div style={linkTitleStyles}>Medium</div>
           </div>
-        </a>
+        </a> */}
         <a href="https://weensy.hashnode.dev" target="_blank" rel="noopener noreferrer">
           <div style={linkLabelStyles}>
             <StaticImage
@@ -284,7 +284,7 @@ const IndexPage = ({}) => {
           <div style={linkLabelStyles}>
             <StaticImage
               src="../images/links/mail.webp"
-              alt="Mail me"
+              alt="Contact"
               placeholder="blurred"
               layout="fixed"
               width={30}
