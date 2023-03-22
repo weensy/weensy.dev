@@ -265,7 +265,7 @@ const IndexPage = ({}) => {
             <div style={linkTitleStyles}>Hashnode</div>
           </div>
         </a>
-        <a href="https://monkeytype.com/profile/NrzN11QAJ5QzqMCy6XsdZsQQjrJ2" target="_blank" rel="noopener noreferrer">
+        <a href="https://monkeytype.com/profile/weensy" target="_blank" rel="noopener noreferrer">
           <div style={linkLabelStyles}>
             <StaticImage
               src="../images/links/monkeytype.png"
@@ -310,7 +310,7 @@ const IndexPage = ({}) => {
             <div style={linkTitleStyles}>Discord</div>
           </div>
         </a> */}
-        <a href="https://buymeacoffee.com/weensy" target="_blank" rel="noopener noreferrer">
+        {/* <a href="https://buymeacoffee.com/weensy" target="_blank" rel="noopener noreferrer">
           <div style={linkLabelStyles}>
             <StaticImage
               src="../images/links/buymeacoffee.webp"
@@ -324,10 +324,10 @@ const IndexPage = ({}) => {
             />
             <div style={linkTitleStyles}>Buy Me a Coffee</div>
           </div>
-        </a>
+        </a> */}
       </div>
 
-      <h2 style={headingStyles}>Works</h2>
+      <h2 style={headingStyles}>OSS Works</h2>
       <div style={sliderContainerStyles}>
         <div style={sliderMainStyles}>
           <div style={caseStyles}>
