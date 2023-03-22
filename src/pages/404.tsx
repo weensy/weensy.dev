@@ -5,7 +5,8 @@ import { Link } from "gatsby"
 const pageStyles = {
   color: "#232129",
   padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+  fontFamily: "Eudoxus Sans, -apple-system, Roboto, sans-serif",
+  fontWeight: 400,
 }
 const headingStyles = {
   marginTop: 0,
@@ -28,6 +29,8 @@ const codeStyles = {
 const NotFoundPage = () => {
   return (
     <main style={pageStyles}>
+      <link rel="preconnect" href="https://stijndv.com"/>
+      <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css"/>
       <title>Not found</title>
       <h1 style={headingStyles}>Page not found</h1>
       <p style={paragraphStyles}>
