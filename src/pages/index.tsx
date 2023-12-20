@@ -205,7 +205,7 @@ const IndexPage = ({}) => {
 
       <h2 style={headingStyles}>Links</h2>
       <div style={linkListStyles}>
-        <a href="https://instagram.com/weensy.dev" target="_blank" rel="noopener noreferrer">
+        <a href="https://instagram.com/w33nsy" target="_blank" rel="noopener noreferrer">
           <div style={linkLabelStyles}>
             <StaticImage
               src="../images/links/instagram.webp"
